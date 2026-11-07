@@ -8,6 +8,8 @@ A free prompt that makes any AI assistant write, code and make images like a car
 | `// check if url starts with https or http`<br>`if (u.startsWith("https://") \|\| u.startsWith("http://")) { return true; // return true } else { return false; }` | `// Basic protocol check, not full SSRF protection.`<br>`return url.startsWith("https://") \|\| url.startsWith("http://");` |
 | *Prompt:* a beautiful woman, flawless skin, perfect face, cinematic lighting, 8k | *Prompt:* a woman in her thirties reading by a kitchen window, overcast light, natural skin texture, creased linen shirt, 50mm lens, mild grain |
 
+Also on [prompts.chat](https://prompts.chat/prompts/cmw6gg2o70001ii08j55vzpeg_humanize-writing-code-and-images-without-the-ai-tells), where you can copy it or run it straight away.
+
 Install it in one step ([details below](#install-it-globally)): paste [humanize-short.md](humanize-short.md) into ChatGPT's custom instructions or Gemini's Saved info, or run this for Claude Code:
 
 ```bash
