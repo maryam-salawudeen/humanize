@@ -17,15 +17,57 @@ It isn't a tool for fooling AI detectors. The aim is work you'd be glad to put y
 - [humanize.md](humanize.md) is the full prompt (about 12,000 characters): writing patterns, code rules, image rules, how to rewrite, how to match your voice and what to leave alone.
 - [humanize-short.md](humanize-short.md) is a short version (about 1,200 characters) that fits ChatGPT's custom instructions box, so it applies to every chat.
 
+## Install it globally
+
+Set it up once and it applies to every chat or project in that assistant.
+
+### Chat assistants
+
+| Assistant | Where it goes | Version |
+|---|---|---|
+| ChatGPT | Settings → Personalization → Custom instructions | short |
+| Gemini | Settings → Saved info | short |
+| Claude (web, desktop, mobile) | Settings → Profile → personal preferences | short or full |
+| Any other assistant | Its custom instructions, profile or memory setting, or paste the full version as your first message | short or full |
+
+If you'd rather keep it separate from your everyday chats, make it its own assistant:
+
+- **Custom GPT:** paste the short version into Instructions, upload `humanize.md` under Knowledge, and add "Follow humanize.md for every reply." The full prompt is longer than the 8,000-character Instructions box.
+- **Gemini Gem or Claude project:** paste the full version as the instructions. If it doesn't fit, upload `humanize.md` as a file and tell it to follow the file.
+
+### Coding assistants
+
+Each of these reads a global instructions file on your computer. The commands add the full prompt to it (`>>` adds to the end, so anything already in the file stays).
+
+**Claude Code** (as a `/humanize` skill):
+
+```bash
+mkdir -p ~/.claude/skills/humanize && { printf -- '---\nname: humanize\ndescription: Humanize writing, code and images. Use when asked to humanize or rewrite something, and when writing prose, code or image prompts.\n---\n\n'; curl -sL https://raw.githubusercontent.com/maryam-salawudeen/humanize/main/humanize.md; } > ~/.claude/skills/humanize/SKILL.md
+```
+
+**OpenAI Codex CLI:**
+
+```bash
+mkdir -p ~/.codex && curl -sL https://raw.githubusercontent.com/maryam-salawudeen/humanize/main/humanize.md >> ~/.codex/AGENTS.md
+```
+
+**Gemini CLI:**
+
+```bash
+mkdir -p ~/.gemini && curl -sL https://raw.githubusercontent.com/maryam-salawudeen/humanize/main/humanize.md >> ~/.gemini/GEMINI.md
+```
+
+**Cursor:** Settings → Rules → User Rules, then paste the full version.
+
+**GitHub Copilot in VS Code:** open the Command Palette, run "Chat: New Instructions File", choose your user folder so it applies to every workspace, and paste the full version.
+
+**Windsurf:** Settings → Customizations → Rules → Global, then paste the version that fits (global rules have a size limit, so use the short version if the full one is cut off).
+
+To update later, run the same command again after deleting the old copy, or paste the new version over the old one.
+
 ## How to use it
 
-- **For every chat:** paste the short version into your custom instructions. In ChatGPT that's Settings → Personalization → Custom instructions; in Gemini it's Saved info; in Claude it's Settings → Profile.
-- **As its own assistant:**
-  - Custom GPT: paste the short version into Instructions, upload `humanize.md` under Knowledge, and add "Follow humanize.md for every reply." The full prompt is longer than the 8,000-character Instructions box.
-  - Gemini Gem or Claude project: paste the full version as the instructions. If it doesn't fit, upload it as a file and tell it to follow the file.
-- **Just for one chat:** paste the full version as your first message.
-
-Then ask:
+Ask:
 
 ```
 Humanize this: <paste your draft>
