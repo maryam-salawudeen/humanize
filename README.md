@@ -1,6 +1,22 @@
 # humanize
 
-A prompt that makes any AI assistant write, code and make images like a careful person. Use it in ChatGPT, Gemini, Claude, Copilot or any assistant that takes custom instructions, either to clean up something AI made or to stop the assistant making it that way in the first place.
+A free prompt that makes any AI assistant write, code and make images like a careful person. It works in ChatGPT, Gemini, Claude, Copilot, Cursor and Codex, and it's built from 40 sources on how to spot AI work.
+
+| Before | After |
+|---|---|
+| It's not just a tool — it's a game-changer. Our platform seamlessly brings your team's tasks, files and messages together, empowering teams to unlock their full potential. The future looks bright. | The platform puts a team's tasks, files and messages in one place. |
+| `// check if url starts with https or http`<br>`if (u.startsWith("https://") \|\| u.startsWith("http://")) { return true; // return true } else { return false; }` | `// Basic protocol check, not full SSRF protection.`<br>`return url.startsWith("https://") \|\| url.startsWith("http://");` |
+| *Prompt:* a beautiful woman, flawless skin, perfect face, cinematic lighting, 8k | *Prompt:* a woman in her thirties reading by a kitchen window, overcast light, natural skin texture, creased linen shirt, 50mm lens, mild grain |
+
+Install it in one step ([details below](#install-it-globally)): paste [humanize-short.md](humanize-short.md) into ChatGPT's custom instructions or Gemini's Saved info, or run this for Claude Code:
+
+```bash
+mkdir -p ~/.claude/skills/humanize && { printf -- '---\nname: humanize\ndescription: Humanize writing, code and images. Use when asked to humanize or rewrite something, and when writing prose, code or image prompts.\n---\n\n'; curl -sL https://raw.githubusercontent.com/maryam-salawudeen/humanize/main/humanize.md; } > ~/.claude/skills/humanize/SKILL.md
+```
+
+## Why
+
+Use it to clean up something AI made, or to stop the assistant making it that way in the first place.
 
 AI output gives itself away with the same habits over and over.
 
