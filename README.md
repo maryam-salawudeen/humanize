@@ -89,6 +89,10 @@ Image prompt after:
 
 The writing rules build on [humanizer](https://github.com/blader/humanizer) by Siqi Chen and Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). The code rules build on my own human-readable code and commenting standard, and the image rules on Northwestern University's guide to spotting AI-generated images. Every other source is listed in [SOURCES.md](SOURCES.md).
 
+## Contributing
+
+Spotted an AI habit that isn't here, or a rule that does more harm than good? Open an issue or a pull request. Add the source you got it from to SOURCES.md, and keep the short version under 1,500 characters so it still fits ChatGPT's custom instructions.
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
